@@ -1,0 +1,11 @@
+.card{
+    cursor: pointer;
+}
+
+#match-list{
+    z-index: 4;
+}
+
+#result{
+    z-index: 2;
+}
