@@ -1,8 +1,6 @@
 /*
     * Version : 1.0
     * Author : @mohamedpierre
-    * placeholder api : https://jsonplaceholder.typicode.com/
-    * test spinner : https://github.com/hr-meheraj/Async-Await-Fetch-Api-with-Loading-Spinner
 */ 
 
 const search = document.getElementById('search');
@@ -51,7 +49,6 @@ const searchStates = async (searchText,isEnter) => {
     }
     outputHtmlList(limitArrayToFive, "justFive");//optional
     console.log('4')
-
 }
 
 // show results in HTML
