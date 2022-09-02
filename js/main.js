@@ -17,7 +17,9 @@ search.addEventListener('input',  () => {
 search.addEventListener('keyup', ($event) =>{
     if($event.keyCode === 13){
         searchStates(search.value, "enter");
+        console.log('1')
     }
+    console.log('2')
 })
 
 // search states.json and filter it
@@ -31,7 +33,7 @@ const searchStates = async (searchText,isEnter) => {
         const regex = new RegExp(`(${searchText})`, 'gi');//gi = global, case insensitive
         return state.name.match(regex) || state.abbr.match(regex)
     });
-
+    console.log('3')
 
     if(searchText === '') {
         matches = limitArrayToFive = []
@@ -39,7 +41,8 @@ const searchStates = async (searchText,isEnter) => {
 
     if(isEnter === "enter") {
         outputHtmlList(matches,"all");
-        return;
+    console.log('3')
+    return;
     }
     
     for (let i = 0; i < matches.length; i++) {
@@ -47,16 +50,17 @@ const searchStates = async (searchText,isEnter) => {
         limitArrayToFive.push(matches[i]);            
     }
     outputHtmlList(limitArrayToFive, "justFive");//optional
+    console.log('4')
+
 }
 
 // show results in HTML
 const outputHtmlList = (matches,isAllResults) => {
     if(matches.length > 0){
         const html = matches.map(match => `
-            <div class="card card-body mb-1"">
-                <h4>${match.name} (${match.abbr}) <span class="text-light">${match.capital}</span></h4>
-               <small>Lat: ${match.lat} / Long: ${match.long}</small> 
-            </div>
+                <h1>${match.name} (${match.abbr}) <span class="text-light">${match.capital}</span></h1>
+               <small>Lat: ${match.lat} / Long: ${match.long}</small>
+               <hr>
         `).join('');
 
         matchList.innerHTML = html;
