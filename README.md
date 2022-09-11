@@ -1,5 +1,5 @@
 # javascript-search
-Auto-complete search.
+Static auto-complete search.
 
-##website
+## website
 https://javascript-search-8wb.pages.dev/
